@@ -1,0 +1,21 @@
+version: "2"
+services:
+  unifi-controller:
+    image: linuxserver/unifi-controller
+    container_name: unifi-controller
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /config
+#    ports:
+#      - 3478:3478/udp
+#      - 10001:10001
+#      - 8080:8080
+#      - 8081:8081
+#      - 8443:8443
+#      - 8880:8880
+#      - 6789:6789
+    mem_limit: 4096m
+    restart: unless-stopped
